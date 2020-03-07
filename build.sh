@@ -19,9 +19,12 @@ cd "$(dirname "$(readlink "$0")")";
 # Check if build/ dir exists. 
 if [ ! -d build ]; then
     mkdir build
+else
+    rm -rf build
+    mkdir build
 fi 
 
 # Change to build dir and compile the library.
 cd build
-cmake ..
+cmake -DCMAKE_INSTALL_PREFIX=/usr  ..
 make $1
