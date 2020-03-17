@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies, and Google Test
         run: |
           sudo apt-get update
-          sudo apt-get install -y apt-utils build-essential wget git cmake clang ninja-build curl gfortran libgtest-dev
+          sudo apt-get install -y apt-utils build-essential wget git cmake clang ninja-build curl gfortran libgtest-dev s libhdf5-dev libboost-all-dev
           sudo mkdir -p "/usr/src/googletest/build/" && cd "/usr/src/googletest/build"
           sudo cmake -G Ninja .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_SHARED_LIBS=ON
           sudo cmake --build .
